@@ -1,0 +1,38 @@
+{% import 'includes/components/Button/button.njk' as Button %}
+
+{% set navItems = [
+  {
+    title: 'Program Hakkında',
+    url: '#program'
+  }, {
+    title: 'Eğitim Programı',
+    url: '#education'
+  }, {
+    title: 'Başvuru',
+    url: '#apply'
+  }, {
+    title: 'SSS',
+    url: '#faq'
+  }, {
+    title: 'İletişim',
+    url: '#contact'
+  }
+] %}
+
+<header class="header">
+  <div class="container">
+    <figure>
+      <img src="../assets/images/logo@2x.png" alt="Logo">
+    </figure>
+
+    <nav class="header__nav">
+      {% for navItem in navItems %}
+        <a href="{{navItem.url}}">{{navItem.title}}</a>
+      {% endfor %}
+
+      {{Button.item(
+        text='Giriş Yap'
+      )}}
+    </nav>
+  </div>
+</header>
