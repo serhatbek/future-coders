@@ -1,5 +1,16 @@
 {% extends 'includes/layout/layout.njk' %}
+{% import "includes/components/Button/button.njk" as Button %}
 
 {% block content %}
-  <h1>helgdf dsdg</h1>
+  <main class="home">
+    <section class="section-banner">
+      <h1>GELECEĞİ YAZANLAR</h1>
+      <p>Gençlere yatırım, geleceğe yazılım!</p>
+
+      {{Button.item(
+    text='Başvur',
+    class='button--wide'
+  )}}
+    </section>
+  </main>
 {% endblock %}
