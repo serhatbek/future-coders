@@ -8,7 +8,7 @@ const notify = require('gulp-notify');
 const nunjucksRender = require('gulp-nunjucks-render');
 
 function copyImages() {
-  return src('src/images/*.{webp, jpeg, png}').pipe(dest('dist/assets/images'));
+  return src('src/images/*.{webp,jpeg,png}').pipe(dest('dist/assets/images'));
 }
 
 function customPlumber(errorTitle) {
@@ -62,7 +62,7 @@ function watchTask() {
     parallel(njkRender, browserSyncReload)
   );
   watch(
-    ['src/scss/**/*.scss', 'src/js/*.js', 'src/images/*.{webp, jpeg, png}'],
+    ['src/scss/**/*.scss', 'src/js/*.js', 'src/images/*.{webp,jpeg,png}'],
     parallel(compileScss, minJs, copyImages, browserSyncReload)
   );
 }

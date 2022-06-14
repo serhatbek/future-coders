@@ -1,0 +1,71 @@
+.header {
+  $self: &;
+  height: 100px;
+  position: relative;
+
+  @include large {
+    height: 64px;
+    background-color: $blue;
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    figure {
+      min-width: 186px;
+      max-width: 244px;
+    }
+
+    .burger-menu {
+      width: 24px;
+      cursor: pointer;
+
+      &__close {
+        display: none;
+      }
+
+      &.active .burger-menu__close {
+        display: block;
+      }
+
+      &.active .burger-menu__open {
+        display: none;
+      }
+    }
+
+    #{ $self }__nav {
+      display: flex;
+      align-items: center;
+      background-color: $white;
+
+      @include large {
+        width: 100%;
+        flex-direction: column;
+        align-items: baseline;
+        position: absolute;
+        padding: 0 10px;
+        background-color: gray;
+        top: -464px;
+        left: 0;
+        transition: all 500ms cubic-bezier(0.21, 0.77, 0.82, 0.25);
+      }
+      > a {
+        color: $dark;
+        font-weight: 600;
+        margin-right: 40px;
+
+        @include large {
+          padding: 10px 0;
+        }
+      }
+
+      &.visible {
+        top: 64px;
+        height: calc(100vh - 64px);
+      }
+    }
+  }
+}

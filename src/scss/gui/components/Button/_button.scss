@@ -1,6 +1,10 @@
 .button {
+  min-width: 140px;
+  height: 40px;
+  text-align: center;
   color: $dark;
   font-weight: 500;
   background-color: $yellow;
   border-radius: 25px;
+  border: transparent;
 }
