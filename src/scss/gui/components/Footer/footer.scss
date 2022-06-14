@@ -1,0 +1,159 @@
+.footer {
+  $self: &;
+  background-color: $purple;
+  position: relative;
+
+  .container {
+    > div {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        'logo logo logo logo'
+        'footer-links footer-links footer-links footer-links'
+        'copy-right copy-right copy-right social';
+
+      @include laptop {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          'logo logo logo logo'
+          'social social social social'
+          'footer-links footer-links footer-links footer-links'
+          'copy-right copy-right copy-right copy-right';
+        justify-items: center;
+      }
+
+      #{$self}__logo {
+        max-width: 126px;
+        padding-top: 41px;
+        padding-bottom: 24px;
+        grid-area: logo;
+
+        @include laptop {
+          padding-top: 26px;
+          padding-bottom: 50px;
+        }
+      }
+
+      #{ $self }__links {
+        display: flex;
+        padding-bottom: 60px;
+        grid-area: footer-links;
+
+        @include phone {
+          width: 100%;
+        }
+
+        > div {
+          max-width: 230px;
+          min-width: 151px;
+          width: 100%;
+
+          a {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 2.64;
+            color: $white;
+            display: block;
+          }
+        }
+
+        > div:nth-child(2) {
+          @include tablet {
+            padding-left: 24px;
+          }
+        }
+      }
+
+      #{ $self }__line {
+        width: 100%;
+        height: 2px;
+        background-color: rgba($color: $white, $alpha: 0.1);
+        position: absolute;
+        bottom: 70px;
+        left: 0;
+        right: 0;
+
+        @include laptop {
+          top: 76px;
+        }
+      }
+
+      #{ $self }__copy {
+        display: flex;
+        align-items: center;
+        grid-area: copy-right;
+        padding: 20px 0;
+
+        @include tablet {
+          flex-direction: column;
+          padding-bottom: 30px;
+        }
+
+        > span {
+          font-size: 14px;
+          line-height: 1.43;
+          font-weight: 500;
+          color: rgba($color: $white, $alpha: 0.1);
+        }
+
+        > span:first-child {
+          @include tablet {
+            margin-bottom: 20px;
+          }
+        }
+
+        > span:nth-child(2) {
+          width: 1px;
+          height: 27px;
+          margin: 0 15px;
+          background-color: rgba($color: $white, $alpha: 0.1);
+          display: inline-block;
+
+          @include tablet {
+            display: none;
+          }
+        }
+
+        > span:last-child {
+          @include phone {
+            max-width: 300px;
+            text-align: center;
+          }
+        }
+      }
+
+      #{ $self }__social {
+        display: flex;
+        min-width: 320px;
+        grid-area: social;
+        padding: 20px 0;
+
+        @include laptop {
+          min-width: auto;
+          padding: 0;
+          margin-bottom: 32px;
+        }
+
+        > span {
+          color: $white;
+          margin-right: 40px;
+
+          @include laptop {
+            display: none;
+          }
+        }
+
+        div {
+          display: flex;
+          a {
+            width: 24px;
+
+            &:not(:last-child) {
+              margin-right: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

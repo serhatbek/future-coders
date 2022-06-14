@@ -17,11 +17,20 @@
     figure {
       min-width: 186px;
       max-width: 244px;
+
+      @include phone {
+        padding: 24px 0;
+      }
     }
 
     .burger-menu {
       width: 24px;
       cursor: pointer;
+      display: none;
+
+      @include large {
+        display: block;
+      }
 
       &__close {
         display: none;
@@ -47,7 +56,6 @@
         align-items: baseline;
         position: absolute;
         padding: 0 10px;
-        background-color: gray;
         top: -464px;
         left: 0;
         transition: all 500ms cubic-bezier(0.21, 0.77, 0.82, 0.25);
@@ -65,6 +73,7 @@
       &.visible {
         top: 64px;
         height: calc(100vh - 64px);
+        z-index: 10;
       }
     }
   }

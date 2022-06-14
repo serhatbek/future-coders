@@ -10,11 +10,9 @@ function toggleMenu() {
   if (headerNav.classList.contains('visible')) {
     headerNav.classList.remove('visible');
     menuBtn.classList.remove('active');
-    // logo.src = '../assets/images/logo@2x.png';
   } else {
     headerNav.classList.add('visible');
     menuBtn.classList.add('active');
-    // logo.src = '../assets/images/logo-white.png';
   }
 }
 
@@ -27,6 +25,8 @@ function mobileMenuWidth() {
     logo.src = '../assets/images/logo-white.png';
   } else {
     logo.src = '../assets/images/logo@2x.png';
+    headerNav.classList.remove('visible');
+    menuBtn.classList.remove('active');
   }
 }
 
