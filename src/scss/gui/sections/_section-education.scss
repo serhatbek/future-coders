@@ -1,0 +1,60 @@
+.section-education {
+  padding-top: 100px;
+  padding-bottom: 131px;
+  background: linear-gradient(
+    180deg,
+    rgba(236, 240, 242, 1) 1%,
+    rgba(252, 252, 252, 1) 100%
+  );
+
+  @include phone {
+    padding-top: 60px;
+    padding-bottom: 100px;
+  }
+
+  &__title {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 43px;
+
+    @include phone {
+      margin-bottom: 19px;
+    }
+
+    > div {
+      margin-left: 24px;
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+
+      @include tablet {
+        display: none;
+      }
+
+      > figure {
+        width: 50px;
+        position: relative;
+        z-index: 1;
+      }
+
+      > figure:first-child::before {
+        content: '';
+        max-width: 50px;
+        height: 60px;
+        width: 100%;
+        background: url('../../assets/images/b-3@2x.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: 3px;
+        top: -1px;
+        z-index: -1;
+      }
+    }
+  }
+}

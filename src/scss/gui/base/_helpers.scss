@@ -28,3 +28,27 @@
 .gap-20 {
   gap: 20px;
 }
+
+.section__title {
+  color: $dark;
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.54px;
+
+  @include phone {
+    font-size: 32px;
+  }
+}
+
+.section__desc {
+  font-size: 18px;
+  line-height: 1.78;
+  letter-spacing: -0.15px;
+  color: $dark;
+  text-align: center;
+
+  @include phone {
+    font-size: 14px;
+  }
+}

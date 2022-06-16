@@ -7,10 +7,6 @@ const minifyJs = require('gulp-uglify');
 const notify = require('gulp-notify');
 const nunjucksRender = require('gulp-nunjucks-render');
 
-// function copyImages() {
-//   return src('src/images/*.{webp,jpeg,png}').pipe(dest('dist/assets/images'));
-// }
-
 function transferImages() {
   return src('src/images/*.{webp,jpeg,png}').pipe(dest('dist/assets/images'));
 }
