@@ -31,3 +31,23 @@ function mobileMenuWidth() {
 }
 
 mobileMenuWidth(mobileNavMatch);
+
+// ***********************
+
+const accordionItems = document.querySelectorAll('.accordion > div');
+
+accordionItems.forEach((item) =>
+  item.addEventListener('click', toggleAccordion)
+);
+
+function toggleAccordion(e) {
+  let target = e.currentTarget;
+  if (!target.classList.contains('active')) {
+    accordionItems.forEach((item) => {
+      item.classList.remove('active');
+    });
+    target.classList.add('active');
+  } else {
+    target.classList.remove('active');
+  }
+}

@@ -1,2 +1,22 @@
 .section-faq {
+  padding-top: 132px;
+  padding-bottom: 125px;
+
+  .section-education__title {
+    margin-bottom: 62px;
+
+    > div > figure:first-child::before {
+      background: url('../../assets/images/d-4.png');
+      max-width: 50px;
+      height: 60px;
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      left: 5px;
+      top: -6px;
+      z-index: -1;
+    }
+  }
 }

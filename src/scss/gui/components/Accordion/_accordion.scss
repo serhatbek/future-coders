@@ -1,0 +1,46 @@
+.accordion {
+  $self: &;
+  max-width: 980px;
+
+  > div {
+    box-shadow: 0 2px 12px -5px rgba(37, 51, 66, 0.5);
+    border-radius: 10px;
+    #{$self}__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 40px;
+      cursor: pointer;
+
+      > span {
+        color: $darker;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      > figure {
+        width: 32px;
+      }
+    }
+
+    #{$self}__body {
+      max-height: 0;
+      overflow-y: hidden;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  > div.active {
+    box-shadow: 0 14px 21px -9px rgba(37, 51, 66, 0.5);
+  }
+
+  > div.active > #{$self}__body {
+    font-size: 14px;
+    font-weight: 500;
+    color: $gray-2;
+    padding: 0 40px 38px 40px;
+    opacity: 1;
+    max-height: 118px;
+  }
+}

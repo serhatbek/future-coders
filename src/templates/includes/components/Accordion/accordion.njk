@@ -1,0 +1,49 @@
+{% set accordionItems = [
+  {
+    title: 'Geleceğini Yazanlar Programı nedir?',
+    desc: 'Geleceğini Yazanlar Programı, yazılım sektöründe ihtiyaç duyulan alanlarda nitelikli insan kaynağı yetiştirmek ve istihdam sağlayarak Türkiye’nin yazılım sektöründe öncü ülke haline gelmesini hedefliyor. Birebir mentorluk, sınıf içi eğitimler ve kişisel gelişim eğitimleri ile desteklenen yolculukta katılımcılar programı başarı ile tamamladıklarında Turkcell ve grup şirketlerinde istihdam imkanını da yakalamış olacaklar.',
+    icon: '../assets/images/plus.png'
+  }, {
+    title: 'Programın hedefi nedir?',
+    desc: 'Geleceğini Yazanlar Programı, yazılım sektöründe ihtiyaç duyulan alanlarda nitelikli insan kaynağı yetiştirmek ve istihdam sağlayarak Türkiye’nin yazılım sektöründe öncü ülke haline gelmesini hedefliyor. Birebir mentorluk, sınıf içi eğitimler ve kişisel gelişim eğitimleri ile desteklenen yolculukta katılımcılar programı başarı ile tamamladıklarında Turkcell ve grup şirketlerinde istihdam imkanını da yakalamış olacaklar.',
+    icon: '../assets/images/plus.png'
+  }, {
+    title: 'Programa kimler başvurabilir?',
+    desc: 'Geleceğini Yazanlar Programı, yazılım sektöründe ihtiyaç duyulan alanlarda nitelikli insan kaynağı yetiştirmek ve istihdam sağlayarak Türkiye’nin yazılım sektöründe öncü ülke haline gelmesini hedefliyor. Birebir mentorluk, sınıf içi eğitimler ve kişisel gelişim eğitimleri ile desteklenen yolculukta katılımcılar programı başarı ile tamamladıklarında Turkcell ve grup şirketlerinde istihdam imkanını da yakalamış olacaklar.',
+    icon: '../assets/images/plus.png'
+  }, {
+    title: 'Programa hangi tarihler arasında başvuru yapabilirim?',
+    desc: 'Geleceğini Yazanlar Programı, yazılım sektöründe ihtiyaç duyulan alanlarda nitelikli insan kaynağı yetiştirmek ve istihdam sağlayarak Türkiye’nin yazılım sektöründe öncü ülke haline gelmesini hedefliyor. Birebir mentorluk, sınıf içi eğitimler ve kişisel gelişim eğitimleri ile desteklenen yolculukta katılımcılar programı başarı ile tamamladıklarında Turkcell ve grup şirketlerinde istihdam imkanını da yakalamış olacaklar.',
+    icon: '../assets/images/plus.png'
+  }, {
+    title: 'Programa başvurmak için kriterler nelerdir?',
+    desc: 'Geleceğini Yazanlar Programı, yazılım sektöründe ihtiyaç duyulan alanlarda nitelikli insan kaynağı yetiştirmek ve istihdam sağlayarak Türkiye’nin yazılım sektöründe öncü ülke haline gelmesini hedefliyor. Birebir mentorluk, sınıf içi eğitimler ve kişisel gelişim eğitimleri ile desteklenen yolculukta katılımcılar programı başarı ile tamamladıklarında Turkcell ve grup şirketlerinde istihdam imkanını da yakalamış olacaklar.',
+    icon: '../assets/images/plus.png'
+  }, {
+    title: 'Programa nasıl başvurabilirim?',
+    desc: 'Geleceğini Yazanlar Programı, yazılım sektöründe ihtiyaç duyulan alanlarda nitelikli insan kaynağı yetiştirmek ve istihdam sağlayarak Türkiye’nin yazılım sektöründe öncü ülke haline gelmesini hedefliyor. Birebir mentorluk, sınıf içi eğitimler ve kişisel gelişim eğitimleri ile desteklenen yolculukta katılımcılar programı başarı ile tamamladıklarında Turkcell ve grup şirketlerinde istihdam imkanını da yakalamış olacaklar.',
+    icon: '../assets/images/plus.png'
+  }, {
+    title: 'Başvurular nasıl değerlendirilecek?',
+    desc: 'Geleceğini Yazanlar Programı, yazılım sektöründe ihtiyaç duyulan alanlarda nitelikli insan kaynağı yetiştirmek ve istihdam sağlayarak Türkiye’nin yazılım sektöründe öncü ülke haline gelmesini hedefliyor. Birebir mentorluk, sınıf içi eğitimler ve kişisel gelişim eğitimleri ile desteklenen yolculukta katılımcılar programı başarı ile tamamladıklarında Turkcell ve grup şirketlerinde istihdam imkanını da yakalamış olacaklar.',
+    icon: '../assets/images/plus.png'
+  }, {
+    title: 'Proje sürecinde hangi eğitimler veriliyor?',
+    desc: 'Geleceğini Yazanlar Programı, yazılım sektöründe ihtiyaç duyulan alanlarda nitelikli insan kaynağı yetiştirmek ve istihdam sağlayarak Türkiye’nin yazılım sektöründe öncü ülke haline gelmesini hedefliyor. Birebir mentorluk, sınıf içi eğitimler ve kişisel gelişim eğitimleri ile desteklenen yolculukta katılımcılar programı başarı ile tamamladıklarında Turkcell ve grup şirketlerinde istihdam imkanını da yakalamış olacaklar.',
+    icon: '../assets/images/plus.png'
+  }
+] %}
+
+<div class="accordion">
+  {%- for item in accordionItems %}
+    <div>
+      <div class="accordion__head">
+        <span>{{ item.title }}</span>
+        <figure class="accordion__icon">
+          <img src="{{ item.icon }}">
+        </figure>
+      </div>
+      <div class="accordion__body">{{ item.desc }}</div>
+    </div>
+  {%- endfor %}
+</div>
