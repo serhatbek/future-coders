@@ -5,6 +5,7 @@
   > div {
     box-shadow: 0 2px 12px -5px rgba(37, 51, 66, 0.5);
     border-radius: 10px;
+
     #{$self}__head {
       display: flex;
       justify-content: space-between;
@@ -12,14 +13,29 @@
       padding: 28px 40px;
       cursor: pointer;
 
+      @include tablet {
+        padding: 18px 20px;
+      }
+
       > span {
         color: $darker;
         font-size: 20px;
         font-weight: 700;
+        margin-right: 20px;
+
+        @include tablet {
+          font-size: 15px;
+          // font-size: 16px;
+        }
       }
 
       > figure {
-        width: 32px;
+        max-width: 32px;
+        min-width: 24px;
+
+        & img:last-child {
+          display: none;
+        }
       }
     }
 
@@ -27,7 +43,7 @@
       max-height: 0;
       overflow-y: hidden;
       opacity: 0;
-      transition: all 0.3s ease-in-out;
+      transition: all 300ms ease-in;
     }
   }
 
@@ -35,12 +51,29 @@
     box-shadow: 0 14px 21px -9px rgba(37, 51, 66, 0.5);
   }
 
+  > div.active > #{$self}__head {
+    > figure > img:first-child {
+      display: none;
+    }
+  }
+
+  > div.active > #{$self}__head {
+    > figure > img:last-child {
+      display: block;
+    }
+  }
+
   > div.active > #{$self}__body {
     font-size: 14px;
     font-weight: 500;
     color: $gray-2;
-    padding: 0 40px 38px 40px;
+    padding: 0 80px 38px 40px;
     opacity: 1;
     max-height: 118px;
+
+    @include tablet {
+      max-height: fit-content;
+      padding: 0 50px 32px 20px;
+    }
   }
 }
