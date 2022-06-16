@@ -39,6 +39,10 @@
   @include phone {
     font-size: 29px;
   }
+
+  &--white {
+    color: $white;
+  }
 }
 
 .section__desc {
@@ -50,5 +54,9 @@
 
   @include phone {
     font-size: 14px;
+  }
+
+  &--white {
+    color: $white;
   }
 }

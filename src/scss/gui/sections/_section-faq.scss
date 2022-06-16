@@ -19,4 +19,9 @@
       z-index: -1;
     }
   }
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
 }

@@ -1,0 +1,28 @@
+.section-contact {
+  padding-top: 58px;
+  padding-bottom: 70px;
+  background: url('../../assets/images/contact-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @include phone {
+    background: url('../../assets/images/contact-bg-mobile.png');
+  }
+
+  > h2 {
+    margin-bottom: 26px;
+  }
+
+  > p {
+    text-align: center;
+    strong {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+}
