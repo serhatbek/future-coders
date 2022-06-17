@@ -2,8 +2,17 @@
   padding-top: 124px;
   padding-bottom: 190px;
 
+  @include phone {
+    padding-top: 40px;
+    padding-bottom: 69px;
+  }
+
   .section-education__title {
     margin-bottom: 102px;
+
+    @include phone {
+      margin-bottom: 40px;
+    }
   }
 
   .section-education__title > div > figure:first-child::before {

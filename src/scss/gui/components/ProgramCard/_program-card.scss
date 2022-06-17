@@ -4,6 +4,10 @@
   border-radius: 32px;
   box-shadow: 0 20px 30px 0 rgba(37, 51, 66, 0.2);
 
+  @include phone {
+    min-width: 320px;
+  }
+
   #{ $self }__head {
     padding: 20px 0 0 40px;
     display: flex;
