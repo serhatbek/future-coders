@@ -1,0 +1,15 @@
+{% macro item(heading, title, subTitle, image, btnText, btnIcon) %}
+  <div class="program-card">
+    <div class="program-card__head">
+      <span>{{ heading }}</span>
+      <figure><img src="{{ image }}"></figure>
+    </div>
+    <div class="program-card__body">
+      <span>{{ title }}</span>
+    </div>
+    <a href="javascript:;" class="program-card__btn">
+      <span>{{ btnText }}</span>
+      <figure><img src="{{btnIcon}}"></figure>
+    </a>
+  </div>
+{% endmacro %}

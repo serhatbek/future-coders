@@ -1,6 +1,7 @@
 {% extends 'includes/layout/layout.njk' %}
 {% import 'includes/components/Button/button.njk' as Button %}
 {% import 'includes/components/Calendar/calendar.njk' as Calendar %}
+{% import 'includes/components/ProgramCard/program-card.njk' as Program %}
 
 {# {% set calendarIitems = [
   {image:'../assets/images/number1', title: 'Başvuru Süreci', date: '15 EKİM - 7 Kasım 2021'},
@@ -59,6 +60,16 @@
       </div>
 
       <p class="section__desc">Programda aşağıdaki eğitim başlıklarında eğitim, gelişim ve istihdam fırsatları bulunuyor.</p>
+
+      <div class="container">
+        {{Program.item(
+          heading='IOS/ Swift Developer',
+          title='Swift Ders Programı',
+          image ='../assets/images/img-9@2x.png',
+          btnText='Tüm Program',
+          btnIcon='../assets/images/arrow-small-right.png'
+        )}}
+      </div>
     </section>
 
     <section id="calendar" class="section-calendar">
