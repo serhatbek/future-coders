@@ -21,6 +21,10 @@
   justify-content: space-between;
 }
 
+.justify-end {
+  justify-content: end;
+}
+
 .align-center {
   align-items: center;
 }
@@ -51,6 +55,7 @@
   letter-spacing: -0.15px;
   color: $dark;
   text-align: center;
+  font-weight: 500;
 
   @include phone {
     font-size: 14px;

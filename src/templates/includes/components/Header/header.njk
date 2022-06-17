@@ -8,6 +8,9 @@
     title: 'Eğitim Programı',
     url: '#education'
   }, {
+    title: 'Calendar',
+    url: '#calendar'
+  }, {
     title: 'Başvuru',
     url: '#apply'
   }, {
@@ -41,3 +44,25 @@
     </nav>
   </div>
 </header>
+
+{# {% set calendarIitems = [
+  {image:'../assets/images/number1', title: 'Başvuru Süreci', date: '15 EKİM - 7 Kasım 2021'}
+  {image:'../assets/images/number2', title: 'Geleceği Yazanlar Online Eğitimleri ', date: '7 Kasım - 26 Kasım 2021'}
+  {image:'../assets/images/number3', title: 'Teknik Test & Mülakat', date: '27 Kasım - 10 Aralık 2021'}
+  {image:'../assets/images/number4', title: 'Bootcamp Programının Başlangıcı', date: '2 Aralık 2021'}
+  {image:'../assets/images/number5', title: 'Bootcamp Programı', date: '20 Aralık 2021 - 20 NİSAN 2022'}
+  {image:'../assets/images/number6', title: 'Part Time Çalışma ', date: '2 Mayıs  - 31 Mayıs 2022'}
+  {image:'../assets/images/number7', title: 'Turkcell ve Grup Şirketlerde İşe Alım', date: 'HAZİRAN 2022'}
+] %}
+
+{% macro item(calImage, calTitle, calDate) %}
+  <div class="calendar__item">
+    <figure>
+      <img src="{{ calImage }}">
+    </figure>
+    <div>
+      <span>{{ calTitle }}</span>
+      <span>{{ calDate }}</span>
+    </div>
+  </div>
+{% endmacro %} #}

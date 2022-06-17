@@ -1,5 +1,16 @@
 {% extends 'includes/layout/layout.njk' %}
-{% import "includes/components/Button/button.njk" as Button %}
+{% import 'includes/components/Button/button.njk' as Button %}
+{% import 'includes/components/Calendar/calendar.njk' as Calendar %}
+
+{# {% set calendarIitems = [
+  {image:'../assets/images/number1', title: 'Başvuru Süreci', date: '15 EKİM - 7 Kasım 2021'},
+  {image:'../assets/images/number2', title: 'Geleceği Yazanlar Online Eğitimleri ', date: '7 Kasım - 26 Kasım 2021'},
+  {image:'../assets/images/number3', title: 'Teknik Test & Mülakat', date: '27 Kasım - 10 Aralık 2021'},
+  {image:'../assets/images/number4', title: 'Bootcamp Programının Başlangıcı', date: '2 Aralık 2021'},
+  {image:'../assets/images/number5', title: 'Bootcamp Programı', date: '20 Aralık 2021 - 20 NİSAN 2022'},
+  {image:'../assets/images/number6', title: 'Part Time Çalışma ', date: '2 Mayıs  - 31 Mayıs 2022'},
+  {image:'../assets/images/number7', title: 'Turkcell ve Grup Şirketlerde İşe Alım', date: 'HAZİRAN 2022'}
+] %} #}
 
 {% block content %}
   <main class="home">
@@ -8,9 +19,9 @@
       <p>Gençlere yatırım, geleceğe yazılım!</p>
 
       {{Button.item(
-    text='Başvurfff',
-    class='button--wide'
-  )}}
+        text='Başvur',
+        class='button--wide'
+      )}}
     </section>
 
     <section id="about-program" class="section-about">
@@ -48,6 +59,64 @@
       </div>
 
       <p class="section__desc">Programda aşağıdaki eğitim başlıklarında eğitim, gelişim ve istihdam fırsatları bulunuyor.</p>
+    </section>
+
+    <section id="calendar" class="section-calendar">
+      <div class="section-education__title">
+        <div>
+          <figure>
+            <img src="../assets/images/c-1.png">
+          </figure>
+          <figure>
+            <img src="../assets/images/c-2.png">
+          </figure>
+          <figure>
+            <img src="../assets/images/c-4.png">
+          </figure>
+        </div>
+        <h2 class="section__title">Takvim</h2>
+      </div>
+
+      <div class="container">
+        {{Calendar.item(
+            calImage = '../assets/images/number1.png', 
+            calTitle = 'Başvuru Süreci', 
+            calDate = '15 EKİM - 7 Kasım 2021'
+          )}}
+        {{Calendar.item(
+            calImage = '../assets/images/number2.png', 
+            calTitle = 'Geleceği Yazanlar Online Eğitimleri', 
+            calDate = '7 Kasım - 26 Kasım 2021',
+            imgRight= true
+          )}}
+        {{Calendar.item(
+            calImage = '../assets/images/number3.png', 
+            calTitle = 'Teknik Test & Mülakat', 
+            calDate = '27 Kasım - 10 Aralık 2021'
+          )}}
+        {{Calendar.item(
+            calImage = '../assets/images/number4.png', 
+            calTitle = 'Bootcamp Programının Başlangıcı', 
+            calDate = '2 Aralık 2021',
+            imgRight= true
+          )}}
+        {{Calendar.item(
+            calImage = '../assets/images/number5.png', 
+            calTitle = 'Bootcamp Programı', 
+            calDate = '20 Aralık 2021 - 20 NİSAN 2022'
+          )}}
+        {{Calendar.item(
+            calImage = '../assets/images/number6.png', 
+            calTitle = 'Part Time Çalışma', 
+            calDate = '2 Mayıs  - 31 Mayıs 2022',
+            imgRight= true
+          )}}
+        {{Calendar.item(
+            calImage = '../assets/images/number7.png', 
+            calTitle = 'Turkcell ve Grup Şirketlerde İşe Alım', 
+            calDate = 'HAZİRAN 2022'
+          )}}
+      </div>
     </section>
 
     <section id="apply" class="section-apply">

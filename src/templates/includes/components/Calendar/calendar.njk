@@ -1,0 +1,23 @@
+{% macro item(calImage, calTitle, calDate, imgRight) %}
+  {% if imgRight %}
+    <div class="section-calendar__item justify-end">
+      <div>
+        <span>{{ calTitle }}</span>
+        <span>{{ calDate }}</span>
+      </div>
+      <figure>
+        <img src="{{ calImage }}">
+      </figure>
+    </div>
+  {% else %}
+    <div class="section-calendar__item">
+      <figure>
+        <img src="{{ calImage }}">
+      </figure>
+      <div>
+        <span>{{ calTitle }}</span>
+        <span>{{ calDate }}</span>
+      </div>
+    </div>
+  {% endif %}
+{% endmacro %}

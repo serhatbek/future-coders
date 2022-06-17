@@ -5,6 +5,7 @@
   > div {
     box-shadow: 0 2px 12px -5px rgba(37, 51, 66, 0.5);
     border-radius: 10px;
+    margin-bottom: 15px;
 
     #{$self}__head {
       display: flex;
