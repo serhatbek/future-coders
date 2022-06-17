@@ -1,0 +1,89 @@
+.calendar {
+  max-width: 680px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 15px 42px -16px rgba(37, 51, 66, 0.5);
+  position: relative;
+
+  &.justify-end > figure {
+    margin-right: 0;
+    margin-left: 24px;
+  }
+
+  @include tablet {
+    border-left: 10px solid $blue;
+  }
+
+  &:nth-child(odd) {
+    align-self: flex-start;
+  }
+
+  &:nth-child(even) {
+    align-self: flex-end;
+
+    @include tablet {
+      align-items: flex-start;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 46px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  > figure {
+    width: 100px;
+    margin-right: 24px;
+
+    @include tablet {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 48px;
+      margin-right: 0;
+    }
+  }
+
+  > div {
+    width: 100%;
+    @include tablet {
+      max-height: 130px;
+    }
+
+    > span {
+      display: block;
+    }
+
+    > span:first-child {
+      color: $dark;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: -0.56px;
+
+      @include tablet {
+        font-size: 18px;
+        margin-bottom: 43px;
+        width: 240px;
+      }
+    }
+
+    > span:last-child {
+      color: $blue;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.83px;
+      font-weight: 600;
+
+      @include tablet {
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {% macro item(calImage, calTitle, calDate, imgRight) %}
   {% if imgRight %}
-    <div class="section-calendar__item justify-end">
+    <div class="calendar justify-end">
       <div>
         <span>{{ calTitle }}</span>
         <span>{{ calDate }}</span>
@@ -10,7 +10,7 @@
       </figure>
     </div>
   {% else %}
-    <div class="section-calendar__item">
+    <div class="calendar">
       <figure>
         <img src="{{ calImage }}">
       </figure>
