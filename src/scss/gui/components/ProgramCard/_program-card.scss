@@ -1,6 +1,7 @@
 .program-card {
   $self: &;
   max-width: 480px;
+  width: 100%;
   border-radius: 32px;
   box-shadow: 0 20px 30px 0 rgba(37, 51, 66, 0.2);
 
@@ -58,21 +59,44 @@
       letter-spacing: -0.34px;
       color: $dark;
       font-weight: 700;
+      display: block;
+      margin-bottom: 10px;
 
       @include phone {
         font-size: 14px;
+      }
+    }
+
+    > ul {
+      color: $darker;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.17px;
+      padding-right: 40px;
+      max-height: 135px;
+      overflow-y: hidden;
+
+      > li:not(:last-child) {
+        margin-bottom: 10px;
       }
     }
   }
 
   #{ $self }__btn {
     padding: 20px 0 20px 40px;
-    border-top: 1px solid $gray-3;
     display: flex;
     align-items: center;
     color: $blue;
     font-weight: 600;
     font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    border-top: 1px solid $gray-3;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: transparent;
 
     @include phone {
       padding: 13px 0 15px 20px;

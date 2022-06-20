@@ -1,4 +1,4 @@
-{% macro item(heading, title, subTitle, image, btnText, btnIcon) %}
+{% macro item(heading, title, subTitle, image, btnText, btnIcon, item1, item2, item3, item4, item5, item6, item7, item8) %}
   <div class="program-card">
     <div class="program-card__head">
       <span>{{ heading }}</span>
@@ -6,10 +6,74 @@
     </div>
     <div class="program-card__body">
       <span>{{ title }}</span>
+      <ul>
+        <li>{{item1}}</li>
+        <li>{{item2}}</li>
+        <li>{{item3}}</li>
+        <li>{{item4}}</li>
+        <li>{{item5}}</li>
+        <li>{{item6}}</li>
+        <li>{{item7}}</li>
+        <li>{{item8}}</li>
+      </ul>
     </div>
-    <a href="javascript:;" class="program-card__btn">
+    <button class="program-card__btn">
       <span>{{ btnText }}</span>
       <figure><img src="{{btnIcon}}"></figure>
-    </a>
+    </button>
   </div>
 {% endmacro %}
+
+{# {% set swiftList = {
+  item1: 'Swift Giriş',
+  item2: 'Değişkenler ve Veri Tipleri',
+  item3: 'Standart Programlama Yapıları',
+  item4: 'OpXnal',
+  item5: 'CollecXons',
+  item6: 'Nesne Tabanlı Programlama'
+} %}
+
+{% set kotlinList = {
+  item1: 'Kotlin Giriş',
+  item2: 'Android Studio Kurulumu ve İlk Proje Oluşturma',
+  item3: 'Çalışma Ortamı Tanıtımı ve İlk Programın Çalıştırılması',
+  item4: 'Bir Projenin Android Studio İçerisinde'
+} %}
+
+{% set javaList = {
+  item1: 'Java & IDE kurulumu',
+  item2: 'Programlama mantığının aktarılması',
+  item3: 'Algoritma Bilgisi ve Mantığı',
+  item4: 'Datatypes and Variables',
+  item5: 'Operators and Expressions',
+  item6: 'Control Flow',
+  item7: 'Arrays'
+} %}
+
+{% set netList = {
+  item1: 'Temel kavramlar',
+  item2: 'Visual Studio ortamı',
+  item3: 'Standart Programlama Yapıları',
+  item4: 'Temel .net kavramları',
+  item5: 'Ilk uygulama',
+  item6: 'Scope kavramı',
+  item7: 'Değişkenler ve veritipleri',
+  item8: 'Operatörler'
+} %}
+
+{% set pythonList = {
+  item1: 'Python',
+  item2: 'Numpy & Pandas',
+  item3: 'Matplotlib & Seaborn',
+  item4: 'Functional Exploratory Data Analysis'
+} %}
+
+{% set sglList = {
+  item1: 'SQL Server Veritabanı Sorgulama',
+  item2: 'SQL Server Veritabanı Yönetimi',
+  item3: 'SQL Server Programlama',
+  item4: 'LINUX Temelleri',
+  item5: 'Client Kurulumları',
+  item6: 'LINUX Shell Komutları',
+  item7: 'Yetkiler ve Kurulum Yönetimi'
+} %} #}
