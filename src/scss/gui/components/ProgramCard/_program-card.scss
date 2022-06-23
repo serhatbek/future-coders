@@ -3,20 +3,31 @@
   max-width: 480px;
   width: 100%;
   border-radius: 32px;
+  background-color: $white;
   box-shadow: 0 20px 30px 0 rgba(37, 51, 66, 0.2);
+  margin-bottom: 40px;
+
+  &:nth-child(odd) {
+    margin-right: 20px;
+
+    @include wrap {
+      margin-right: 0;
+    }
+  }
 
   @include phone {
-    min-width: 320px;
+    max-width: 320px;
+    margin-bottom: 20px;
   }
 
   #{ $self }__head {
-    padding: 20px 0 0 40px;
+    padding: 30px 30px 0 40px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 
     @include phone {
-      padding: 20px 0 0 27px;
+      padding: 20px 20px 0 27px;
     }
 
     > span {
@@ -34,6 +45,10 @@
       }
     }
 
+    > span.narrow {
+      max-width: 178px;
+    }
+
     > figure {
       max-width: 180px;
       width: 100%;
@@ -48,19 +63,21 @@
 
   #{ $self }__body {
     padding-left: 40px;
+    overflow-y: hidden;
 
     @include phone {
       padding-left: 20px;
     }
 
-    > span {
-      font-size: 16px;
-      line-height: 2.33;
+    .strong {
+      font-size: 18px;
+      // line-height: 2.33;
       letter-spacing: -0.34px;
       color: $dark;
       font-weight: 700;
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 13px !important;
+      max-width: 209px;
 
       @include phone {
         font-size: 14px;
@@ -69,16 +86,24 @@
 
     > ul {
       color: $darker;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 500;
       line-height: 1.2;
       letter-spacing: -0.17px;
       padding-right: 40px;
-      max-height: 135px;
-      overflow-y: hidden;
+      max-height: 190px;
+
+      @include phone {
+        font-size: 14px;
+        max-height: 118px;
+      }
 
       > li:not(:last-child) {
         margin-bottom: 10px;
+
+        @include phone {
+          margin-bottom: 5px;
+        }
       }
     }
   }
@@ -89,17 +114,18 @@
     align-items: center;
     color: $blue;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
     width: 100%;
     border: none;
-    border-top: 1px solid $gray-3;
+    border-top: 2px solid $gray-3;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     background: transparent;
 
     @include phone {
       padding: 13px 0 15px 20px;
+      font-size: 14px;
     }
 
     > figure {

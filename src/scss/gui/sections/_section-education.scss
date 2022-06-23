@@ -13,11 +13,10 @@
   }
 
   &__title {
-    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 43px;
+    margin-bottom: 32px;
 
     @include phone {
       margin-bottom: 19px;
@@ -25,7 +24,6 @@
 
     > div {
       margin-left: 24px;
-      margin-top: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -59,13 +57,12 @@
   }
 
   > p {
-    margin-bottom: 43px;
+    margin-bottom: 54px;
   }
 
   .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
   }
 }

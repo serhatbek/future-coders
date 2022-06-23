@@ -22,28 +22,26 @@
   }
 ] %}
 
-<header class="header">
-  <div class="container">
-    <figure>
-      <img class="logo" src="../assets/images/logo@2x.png" alt="Logo">
-    </figure>
+<div class="container">
+  <figure>
+    <img class="logo" src="../assets/images/logo@2x.png" alt="Logo">
+  </figure>
 
-    <div class="burger-menu">
-      <img class="burger-menu__open" src="../assets/images/burger-menu.png">
-      <img class="burger-menu__close" src="../assets/images/burger-menu-close.png">
-    </div>
+  <div class="burger-menu">
+    <img class="burger-menu__open" src="../assets/images/burger-menu.png">
+    <img class="burger-menu__close" src="../assets/images/burger-menu-close.png">
+  </div>
 
-    <nav class="header__nav">
-      {% for navItem in navItems %}
-        <a href="{{navItem.url}}">{{navItem.title}}</a>
-      {% endfor %}
+  <nav class="header__nav">
+    {% for navItem in navItems %}
+      <a href="{{navItem.url}}">{{navItem.title}}</a>
+    {% endfor %}
 
-      {{Button.item(
+    {{Button.item(
         text='Giriş Yap'
       )}}
-    </nav>
-  </div>
-</header>
+  </nav>
+</div>
 
 {# {% set calendarIitems = [
   {image:'../assets/images/number1', title: 'Başvuru Süreci', date: '15 EKİM - 7 Kasım 2021'}

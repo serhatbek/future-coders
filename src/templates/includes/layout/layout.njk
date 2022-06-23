@@ -12,9 +12,19 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
   </head>
   <body>
-    {% include 'includes/components/Header/header.njk' %}
-    {% block content %}{% endblock %}
-    {% include 'includes/components/Footer/footer.njk' %}
+    <div class="page-wrap{% if page == 'modal' %} modal-page{% endif %}">
+      <header class="header">
+        {% include 'includes/components/Header/header.njk' %}
+      </header>
+
+      <main>
+        {% block content %}{% endblock %}
+      </main>
+
+      <footer class="footer">
+        {% include 'includes/components/Footer/footer.njk' %}
+      </footer>
+    </div>
     <script src="../assets/js/app.js"></script>
   </body>
 </html>

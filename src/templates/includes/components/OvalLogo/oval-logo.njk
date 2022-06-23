@@ -1,0 +1,8 @@
+{% macro item(imgUrl, class) %}
+  <div class="oval-box 
+      {%- if class %} {{class}} {%- endif -%}">
+    <figure class="oval-box__logo">
+      <img src="{{imgUrl}}">
+    </figure>
+  </div>
+{% endmacro %}

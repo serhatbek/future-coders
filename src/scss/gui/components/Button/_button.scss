@@ -3,14 +3,14 @@
   height: 40px;
   text-align: center;
   color: $dark;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   background-color: $yellow;
   border-radius: 25px;
   border: transparent;
 
   &--wide {
-    min-width: 210px;
+    min-width: 220px;
     height: 50px;
   }
 

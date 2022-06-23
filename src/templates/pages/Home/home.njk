@@ -1,77 +1,255 @@
 {% extends 'includes/layout/layout.njk' %}
 {% import 'includes/components/Button/button.njk' as Button %}
 {% import 'includes/components/Calendar/calendar.njk' as Calendar %}
-{% import 'includes/components/ProgramCard/program-card.njk' as ProgramCard %}
-{# {% import 'includes/components/Calendar/calendar-2.njk' as Calendar2 with context %} #}
-
-{# {% set calendarIitems = [
-  {image:'../assets/images/number1.png', title: 'Başvuru Süreci', date: '15 EKİM - 7 Kasım 2021'},
-  {image:'../assets/images/number2.png', title: 'Geleceği Yazanlar Online Eğitimleri ', date: '7 Kasım - 26 Kasım 2021'},
-  {image:'../assets/images/number3.png', title: 'Teknik Test & Mülakat', date: '27 Kasım - 10 Aralık 2021'},
-  {image:'../assets/images/number4.png', title: 'Bootcamp Programının Başlangıcı', date: '2 Aralık 2021'},
-  {image:'../assets/images/number5.png', title: 'Bootcamp Programı', date: '20 Aralık 2021 - 20 NİSAN 2022'},
-  {image:'../assets/images/number6.png', title: 'Part Time Çalışma ', date: '2 Mayıs  - 31 Mayıs 2022'},
-  {image:'../assets/images/number7.png', title: 'Turkcell ve Grup Şirketlerde İşe Alım', date: 'HAZİRAN 2022'}
+{% import 'includes/components/ProgramCard/program-card.njk' as ProgramCard with context %}
+{# {% import 'includes/components/ProgramCard/program-card.njk' as ProgramCard with context %} #}
+{# {% set programCardItems = [
+  {
+    title: 'IOS/ Swift Developer',
+    logo: 'assets/images/logo-ios.png',
+    btnText:'Tüm Program',
+    btnIcon:'../assets/images/arrow-small-right.png',
+    features: [
+      {
+        text: 'Swift Ders Programı',
+        strong: true
+      },
+      {
+        text: 'Swift Giriş'
+      },
+      {
+        text: 'Değişkenler ve VEri Tipleri'
+      },
+      {
+        text: 'Standart Programlama Yapıları'
+      },
+      {
+        text: 'OpXnal'
+      },
+      {
+        text: 'CollecXons'
+      },
+      {
+        text: 'Nesne Tabanlı Programlama'
+      }
+    ]
+  },
+    {
+    title: 'Android / Kotlin Developer',
+    logo: 'assets/images/logo-kotlin.png',
+    btnText:'Tüm Program',
+    btnIcon:'../assets/images/arrow-small-right.png',
+    features: [
+      {
+        text: 'Kotlin Ders Programı',
+        strong: true
+      },
+      {
+        text: 'Kotlin Giriş'
+      },
+      {
+        text: 'Android Studio Kurulumu ve İlk Proje Oluşturma'
+      },
+      {
+        text: 'Çalışma Ortamı Tanıtımı ve İlk Programın Çalıştırılması'
+      },
+      {
+        text: 'Bir Projenin Android Studio İçerisinde'
+      }
+    ]
+  },
+    {
+    title: 'Java Developer',
+    logo: 'assets/images/logo-java.png',
+    btnText:'Tüm Program',
+    btnIcon:'../assets/images/arrow-small-right.png',
+    features: [
+      {
+        text: 'Java Ders Programı',
+        strong: true
+      },
+      {
+        text: 'Java & IDE kurulumu'
+      },
+      {
+        text: 'Programlama mantığının aktarılması'
+      },
+      {
+        text: 'Algoritma Bilgisi ve Mantığı'
+      },
+      {
+        text: 'Datatypes and Variables'
+      },
+      {
+        text: 'Operators and Expressions'
+      },
+      {
+        text: 'Control Flow'
+      },
+      {
+        text: 'Arrays'
+      }
+    ]
+  },
+  {
+    title: '. Net Developer',
+    logo: 'assets/images/logo-net.png',
+    btnText:'Tüm Program',
+    btnIcon:'../assets/images/arrow-small-right.png',
+    features: [
+      {
+        text: '. Net Ders Programı',
+        strong: true
+      },
+      {
+        text: 'Temel kavramlar'
+      },
+      {
+        text: 'Visual Studio ortamı'
+      },
+      {
+        text: 'Standart Programlama Yapıları'
+      },
+      {
+        text: 'Temel .net kavramları'
+      },
+      {
+        text: 'Ilk uygulama'
+      },
+      {
+        text: 'Scope kavramı'
+      },
+      {
+        text: 'Değişkenler ve veritipleri'
+      },
+      {
+        text: 'Operatörler'
+      }
+    ]
+  },
+  {
+    title: 'Data Scientist',
+    logo: 'assets/images/logo-data.png',
+    btnText:'Tüm Program',
+    btnIcon:'../assets/images/arrow-small-right.png',
+    features: [
+      {
+        text: 'Data Ders Programı',
+        strong: true
+      },
+      {
+        text: 'Python'
+      },
+      {
+        text: 'Numpy & Pandas'
+      },
+      {
+        text: 'Matplotlib & Seaborn'
+      },
+      {
+        text: 'Functional Exploratory Data Analysis'
+      }
+    ]
+  },
+    {
+    title: 'Application Operations',
+    logo: 'assets/images/logo-app.png',
+    btnText:'Tüm Program',
+    btnIcon:'../assets/images/arrow-small-right.png',
+    features: [
+      {
+        text: 'Application Ders Programı',
+        strong: true
+      },
+      {
+        text: 'SQL Server Veritabanı Sorgulama'
+      },
+      {
+        text: 'SQL Server Veritabanı Yönetimi'
+      },
+      {
+        text: 'SQL Server Programlama'
+      },
+      {
+        text: 'LINUX Temelleri'
+      },
+      {
+        text: 'Ilk uygulama'
+      },
+      {
+        text: 'Scope kavramı'
+      },
+      {
+        text: 'Client Kurulumları'
+      },
+      {
+        text: 'LINUX Shell Komutları'
+      },
+      {
+        text: 'Yetkiler ve Kurulum Yönetimi'
+      }
+    ]
+  }
 ] %} #}
 
 {% block content %}
-  <main class="home">
-    <section class="section-banner">
-      <h1>GELECEĞİ YAZANLAR</h1>
-      <p>Gençlere yatırım, geleceğe yazılım!</p>
+  <section class="section-banner">
+    <h1>GELECEĞİ YAZANLAR</h1>
+    <p>Gençlere yatırım, geleceğe yazılım!</p>
 
-      {{Button.item(
+    {{Button.item(
         text='Başvur',
         class='button--wide'
       )}}
-    </section>
+  </section>
 
-    <section id="about-program" class="section-about">
-      <div class="container">
-        <h2 class="section__title">Program Hakkında</h2>
-        <p class="section__desc">Geleceğini Yazanlar Programı, yazılım sektöründe ihtiyaç duyulan alanlarda nitelikli insan kaynağı yetiştirmek ve istihdam sağlayarak Türkiye’nin yazılım sektöründe öncü ülke haline gelmesini hedefliyor.</p>
-        <p class="section__desc">Birebir mentorluk, sınıf içi eğitimler ve kişisel gelişim eğitimleri ile desteklenen yolculukta katılımcılar programı başarı ile tamamladıklarında Turkcell ve grup şirketlerinde istihdam imkanını da yakalamış olacaklar.</p>
-        <p class="section__desc">Bootcamp Programına katılmaya hak kazanan katılımcılara gelişim yolculukları boyunca Milli Eğitim Bakanlığı tarafından bütçe desteği de sağlanacaktır.</p>
+  <section id="about-program" class="section-about">
+    <div class="container">
+      <h2 class="section__title">Program Hakkında</h2>
+      <p class="section__desc">Geleceğini Yazanlar Programı, yazılım sektöründe ihtiyaç duyulan alanlarda nitelikli insan kaynağı yetiştirmek ve istihdam sağlayarak Türkiye’nin yazılım sektöründe öncü ülke haline gelmesini hedefliyor.</p>
+      <p class="section__desc">Birebir mentorluk, sınıf içi eğitimler ve kişisel gelişim eğitimleri ile desteklenen yolculukta katılımcılar programı başarı ile tamamladıklarında Turkcell ve grup şirketlerinde istihdam imkanını da yakalamış olacaklar.</p>
+      <p class="section__desc">Bootcamp Programına katılmaya hak kazanan katılımcılara gelişim yolculukları boyunca Milli Eğitim Bakanlığı tarafından bütçe desteği de sağlanacaktır.</p>
 
-        <div>
-          <figure>
-            <img src="../assets/images/topcik@2x.png" alt="Turkcell Logo">
-          </figure>
-          <figure>
-            <img src="../assets/images/meb-logo@2x.png" alt="MEB Logo">
-          </figure>
-        </div>
-
-        {# {% for item in calendarIitems %}
-          {{Calendar2.item(
-          calImage=item.image,
-          calTitle=item.title,
-          calDate=item.date
-        )}}
-        {% endfor %} #}
+      <div>
+        <figure>
+          <img src="../assets/images/topcik@2x.png" alt="Turkcell Logo">
+        </figure>
+        <figure>
+          <img src="../assets/images/meb-logo@2x.png" alt="MEB Logo">
+        </figure>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="education" class="section-education">
-      <div class="section-education__title">
-        <h2 class="section__title">Eğitim Programı</h2>
-        <div>
-          <figure>
-            <img src="../assets/images/b-0@2x.png">
-          </figure>
-          <figure>
-            <img src="../assets/images/b-2@2x.png">
-          </figure>
-          <figure>
-            <img src="../assets/images/b-4@2x.png">
-          </figure>
-        </div>
+  <section id="education" class="section-education">
+    <div class="section-education__title">
+      <h2 class="section__title">Eğitim Programı</h2>
+      <div>
+        <figure>
+          <img src="../assets/images/b-0@2x.png">
+        </figure>
+        <figure>
+          <img src="../assets/images/b-2@2x.png">
+        </figure>
+        <figure>
+          <img src="../assets/images/b-4@2x.png">
+        </figure>
       </div>
+    </div>
+    <p class="section__desc">Programda aşağıdaki eğitim başlıklarında eğitim, gelişim ve istihdam fırsatları bulunuyor.</p>
 
-      <p class="section__desc">Programda aşağıdaki eğitim başlıklarında eğitim, gelişim ve istihdam fırsatları bulunuyor.</p>
-
-      <div class="container">
+    <div class="container">
+      {{ProgramCard.item()}}
+      {# {% for item in programCardItems %}
         {{ProgramCard.item(
+        title=item.title,
+        logo=item.logo,
+        btnText=item.btnText,
+        btnIcon=item.btnIcon
+      )}}
+      {% endfor %} #}
+
+      {# {{ProgramCard.item(
           heading='IOS/ Swift Developer',
           title='Swift Ders Programı',
           image ='../assets/images/img-9@2x.png',
@@ -85,7 +263,7 @@
           item6='Nesne Tabanlı Programlama'
         )}}
 
-        {{ProgramCard.item(
+      {{ProgramCard.item(
           heading='Android / Kotlin Developer',
           title='Kotlin Ders Programı',
           image ='../assets/images/img-10@2x.png',
@@ -97,7 +275,7 @@
           item4='Bir Projenin Android Studio İçerisinde'
         )}}
 
-        {{ProgramCard.item(
+      {{ProgramCard.item(
           heading='Java Developer',
           title='Java Ders Programı',
           image ='../assets/images/img-9@22x.png',
@@ -112,7 +290,7 @@
           item7='Arrays'
         )}}
 
-        {{ProgramCard.item(
+      {{ProgramCard.item(
           heading='. Net Developer',
           title='. Net Ders Programı',
           image ='../assets/images/img-100@2x.png',
@@ -128,7 +306,7 @@
           item8='Operatörler'
         )}}
 
-        {{ProgramCard.item(
+      {{ProgramCard.item(
           heading='Data Scientist',
           title='Data Ders Programı',
           image ='../assets/images/img-8@2x.png',
@@ -140,7 +318,7 @@
           item4='Functional Exploratory Data Analysis'
         )}}
 
-        {{ProgramCard.item(
+      {{ProgramCard.item(
           heading='Application Operations',
           title='Application Ders Programı',
           image ='../assets/images/img-7@2x.png',
@@ -153,120 +331,119 @@
           item5='Client Kurulumları',
           item6='LINUX Shell Komutları',
           item7='Yetkiler ve Kurulum Yönetimi'
-        )}}
-      </div>
-    </section>
+        )}} #}
+    </div>
+  </section>
 
-    <section id="calendar" class="section-calendar">
-      <div class="section-education__title">
-        <div>
-          <figure>
-            <img src="../assets/images/c-1.png">
-          </figure>
-          <figure>
-            <img src="../assets/images/c-2.png">
-          </figure>
-          <figure>
-            <img src="../assets/images/c-4.png">
-          </figure>
-        </div>
-        <h2 class="section__title">Takvim</h2>
+  <section id="calendar" class="section-calendar">
+    <div class="section-education__title">
+      <div>
+        <figure>
+          <img src="../assets/images/c-1.png">
+        </figure>
+        <figure>
+          <img src="../assets/images/c-2.png">
+        </figure>
+        <figure>
+          <img src="../assets/images/c-4.png">
+        </figure>
       </div>
+      <h2 class="section__title">Takvim</h2>
+    </div>
 
-      <div class="container">
-        {{Calendar.item(
+    <div class="container">
+      {{Calendar.item(
             calImage = '../assets/images/number1.png', 
             calTitle = 'Başvuru Süreci', 
             calDate = '15 EKİM - 7 Kasım 2021'
           )}}
-        {{Calendar.item(
+      {{Calendar.item(
             calImage = '../assets/images/number2.png', 
             calTitle = 'Geleceği Yazanlar Online Eğitimleri', 
             calDate = '7 Kasım - 26 Kasım 2021',
             imgRight= true
           )}}
-        {{Calendar.item(
+      {{Calendar.item(
             calImage = '../assets/images/number3.png', 
             calTitle = 'Teknik Test & Mülakat', 
             calDate = '27 Kasım - 10 Aralık 2021'
           )}}
-        {{Calendar.item(
+      {{Calendar.item(
             calImage = '../assets/images/number4.png', 
             calTitle = 'Bootcamp Programının Başlangıcı', 
             calDate = '2 Aralık 2021',
             imgRight= true
           )}}
-        {{Calendar.item(
+      {{Calendar.item(
             calImage = '../assets/images/number5.png', 
             calTitle = 'Bootcamp Programı', 
             calDate = '20 Aralık 2021 - 20 NİSAN 2022'
           )}}
-        {{Calendar.item(
+      {{Calendar.item(
             calImage = '../assets/images/number6.png', 
             calTitle = 'Part Time Çalışma', 
             calDate = '2 Mayıs  - 31 Mayıs 2022',
             imgRight= true
           )}}
-        {{Calendar.item(
+      {{Calendar.item(
             calImage = '../assets/images/number7.png', 
             calTitle = 'Turkcell ve Grup Şirketlerde İşe Alım', 
             calDate = 'HAZİRAN 2022'
           )}}
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="apply" class="section-apply">
-      <div class="container">
+  <section id="apply" class="section-apply">
+    <div class="container">
+      <div>
+        <h2 class="section__title">Başvuru Koşulları</h2>
+        <p>Programa başvurabilmek için gerekli koşullar aşağıda belirtilmiştir:</p>
+
+        <ul>
+          <li>
+            <figure><img src="../assets/images/check@2x.png"></figure>Üniversitelerin mühendlislik bölümlerinde okuyan 4. Sınıf, yeni mezun veya en fazla 2 yıllık iş tecrübesine sahip olan</li>
+          <li>
+            <figure><img src="../assets/images/check@2x.png"></figure>Yazılım ve kodlama alanında kariyer sahibi olmak isteyen</li>
+        </ul>
+
         <div>
-          <h2 class="section__title">Başvuru Koşulları</h2>
-          <p>Programa başvurabilmek için gerekli koşullar aşağıda belirtilmiştir:</p>
+          <span>Son Başvuru Tarihi</span>
+          <span>7 Kasım 2021</span>
+        </div>
 
-          <ul>
-            <li>
-              <figure><img src="../assets/images/check@2x.png"></figure>Üniversitelerin mühendlislik bölümlerinde okuyan 4. Sınıf, yeni mezun veya en fazla 2 yıllık iş tecrübesine sahip olan</li>
-            <li>
-              <figure><img src="../assets/images/check@2x.png"></figure>Yazılım ve kodlama alanında kariyer sahibi olmak isteyen</li>
-          </ul>
-
-          <div>
-            <span>Son Başvuru Tarihi</span>
-            <span>7 Kasım 2021</span>
-          </div>
-
-          {{Button.item(
+        {{Button.item(
           text='Hemen Başvur',
           class='button--wide'
         )}}
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="faq" class="section-faq">
-      <div class="section-education__title">
-        <h2 class="section__title">Sık Sorulan Sorular</h2>
-        <div>
-          <figure>
-            <img src="../assets/images/d-1.png">
-          </figure>
-          <figure>
-            <img src="../assets/images/d-2.png">
-          </figure>
-          <figure>
-            <img src="../assets/images/d-3.png">
-          </figure>
-        </div>
+  <section id="faq" class="section-faq">
+    <div class="section-education__title">
+      <h2 class="section__title">Sık Sorulan Sorular</h2>
+      <div>
+        <figure>
+          <img src="../assets/images/d-1.png">
+        </figure>
+        <figure>
+          <img src="../assets/images/d-2.png">
+        </figure>
+        <figure>
+          <img src="../assets/images/d-3.png">
+        </figure>
       </div>
+    </div>
 
-      <div class="container">
-        {% include 'includes/components/Accordion/accordion.njk' %}
-      </div>
-    </section>
+    <div class="container">
+      {% include 'includes/components/Accordion/accordion.njk' %}
+    </div>
+  </section>
 
-    <section id="contact" class="section-contact">
-      <h2 class="section__title section__title--white">İletişim</h2>
-      <p class="section__desc section__desc--white">Daha fazla bilgi veya sorularınız için
+  <section id="contact" class="section-contact">
+    <h2 class="section__title section__title--white">İletişim</h2>
+    <p class="section__desc section__desc--white">Daha fazla bilgi veya sorularınız için
         <strong>destek@gelecegiyazanlar.turkcell.com.tr</strong>
       ile iletişime geçebilirsiniz</p>
-    </section>
-  </main>
+  </section>
 {% endblock %}

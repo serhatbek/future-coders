@@ -1,79 +1,225 @@
-{% macro item(heading, title, subTitle, image, btnText, btnIcon, item1, item2, item3, item4, item5, item6, item7, item8) %}
-  <div class="program-card">
-    <div class="program-card__head">
-      <span>{{ heading }}</span>
-      <figure><img src="{{ image }}"></figure>
+{% import 'includes/components/OvalLogo/oval-logo.njk' as OvalLogo %}
+
+{% macro item() %}
+  {% for item in programCardItems %}
+    <div class="program-card">
+      <div class="program-card__head">
+        <span class="{%- if item.narrow %}narrow{%- endif -%}">{{ item.title }}</span>
+        {{OvalLogo.item(
+        imgUrl=item.logo,
+        class=item.logoClass
+      )}}
+      </div>
+      <div class="program-card__body">
+        <ul>
+          {% for list in item.features %}
+            <li class="{%- if list.strong %} strong{%- endif -%}">{{ list.text }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <button class="program-card__btn">
+        <span>{{ item.btnText }}</span>
+        <figure><img src="{{ item.btnIcon }}"></figure>
+      </button>
     </div>
-    <div class="program-card__body">
-      <span>{{ title }}</span>
-      <ul>
-        <li>{{item1}}</li>
-        <li>{{item2}}</li>
-        <li>{{item3}}</li>
-        <li>{{item4}}</li>
-        <li>{{item5}}</li>
-        <li>{{item6}}</li>
-        <li>{{item7}}</li>
-        <li>{{item8}}</li>
-      </ul>
-    </div>
-    <button class="program-card__btn">
-      <span>{{ btnText }}</span>
-      <figure><img src="{{btnIcon}}"></figure>
-    </button>
-  </div>
+  {% endfor %}
 {% endmacro %}
 
-{# {% set swiftList = {
-  item1: 'Swift Giriş',
-  item2: 'Değişkenler ve Veri Tipleri',
-  item3: 'Standart Programlama Yapıları',
-  item4: 'OpXnal',
-  item5: 'CollecXons',
-  item6: 'Nesne Tabanlı Programlama'
-} %}
-
-{% set kotlinList = {
-  item1: 'Kotlin Giriş',
-  item2: 'Android Studio Kurulumu ve İlk Proje Oluşturma',
-  item3: 'Çalışma Ortamı Tanıtımı ve İlk Programın Çalıştırılması',
-  item4: 'Bir Projenin Android Studio İçerisinde'
-} %}
-
-{% set javaList = {
-  item1: 'Java & IDE kurulumu',
-  item2: 'Programlama mantığının aktarılması',
-  item3: 'Algoritma Bilgisi ve Mantığı',
-  item4: 'Datatypes and Variables',
-  item5: 'Operators and Expressions',
-  item6: 'Control Flow',
-  item7: 'Arrays'
-} %}
-
-{% set netList = {
-  item1: 'Temel kavramlar',
-  item2: 'Visual Studio ortamı',
-  item3: 'Standart Programlama Yapıları',
-  item4: 'Temel .net kavramları',
-  item5: 'Ilk uygulama',
-  item6: 'Scope kavramı',
-  item7: 'Değişkenler ve veritipleri',
-  item8: 'Operatörler'
-} %}
-
-{% set pythonList = {
-  item1: 'Python',
-  item2: 'Numpy & Pandas',
-  item3: 'Matplotlib & Seaborn',
-  item4: 'Functional Exploratory Data Analysis'
-} %}
-
-{% set sglList = {
-  item1: 'SQL Server Veritabanı Sorgulama',
-  item2: 'SQL Server Veritabanı Yönetimi',
-  item3: 'SQL Server Programlama',
-  item4: 'LINUX Temelleri',
-  item5: 'Client Kurulumları',
-  item6: 'LINUX Shell Komutları',
-  item7: 'Yetkiler ve Kurulum Yönetimi'
-} %} #}
+{% set programCardItems = [
+  {
+    title: 'IOS/ Swift Developer',
+    logo: '../assets/images/logo-ios.png',
+    logoClass: 'oval-box--ios',
+    btnText:'Tüm Program',
+    btnIcon:'../assets/images/arrow-small-right.png',
+    features: [
+      {
+        text: 'Swift Ders Programı',
+        strong: true
+      },
+      {
+        text: 'Swift Giriş'
+      },
+      {
+        text: 'Değişkenler ve Veri Tipleri'
+      },
+      {
+        text: 'Standart Programlama Yapıları'
+      },
+      {
+        text: 'OpXnal'
+      },
+      {
+        text: 'CollecXons'
+      },
+      {
+        text: 'Nesne Tabanlı Programlama'
+      }
+    ]
+  },
+    {
+    title: 'Android / Kotlin Developer',
+    logo: '../assets/images/logo-kotlin.png',
+    logoClass: 'oval-box--kotlin',
+    btnText:'Tüm Program',
+    btnIcon:'../assets/images/arrow-small-right.png',
+    features: [
+      {
+        text: 'Kotlin Ders Programı',
+        strong: true
+      },
+      {
+        text: 'Kotlin Giriş'
+      },
+      {
+        text: 'Android Studio Kurulumu ve İlk Proje Oluşturma'
+      },
+      {
+        text: 'Çalışma Ortamı Tanıtımı ve İlk Programın Çalıştırılması'
+      },
+      {
+        text: 'Bir Projenin Android Studio İçerisinde'
+      }
+    ]
+  },
+    {
+    title: 'Java Developer',
+    narrow: true,
+    logo: '../assets/images/logo-java.png',
+    logoClass: 'oval-box--java',
+    btnText:'Tüm Program',
+    btnIcon:'../assets/images/arrow-small-right.png',
+    features: [
+      {
+        text: 'Java Ders Programı',
+        strong: true
+      },
+      {
+        text: 'Java & IDE kurulumu'
+      },
+      {
+        text: 'Programlama mantığının aktarılması'
+      },
+      {
+        text: 'Algoritma Bilgisi ve Mantığı'
+      },
+      {
+        text: 'Datatypes and Variables'
+      },
+      {
+        text: 'Operators and Expressions'
+      },
+      {
+        text: 'Control Flow'
+      },
+      {
+        text: 'Arrays'
+      }
+    ]
+  },
+  {
+    title: '. Net Developer',
+    narrow: true,
+    logo: '../assets/images/logo-net.png',
+    logoClass: 'oval-box--net',
+    btnText:'Tüm Program',
+    btnIcon:'../assets/images/arrow-small-right.png',
+    features: [
+      {
+        text: '. Net Ders Programı',
+        strong: true
+      },
+      {
+        text: 'Temel kavramlar'
+      },
+      {
+        text: 'Visual Studio ortamı'
+      },
+      {
+        text: 'Standart Programlama Yapıları'
+      },
+      {
+        text: 'Temel .net kavramları'
+      },
+      {
+        text: 'Ilk uygulama'
+      },
+      {
+        text: 'Scope kavramı'
+      },
+      {
+        text: 'Değişkenler ve veritipleri'
+      },
+      {
+        text: 'Operatörler'
+      }
+    ]
+  },
+  {
+    title: 'Data Scientist',
+    narrow: true,
+    logo: '../assets/images/logo-data.png',
+    logoClass: 'oval-box--data',
+    btnText:'Tüm Program',
+    btnIcon:'../assets/images/arrow-small-right.png',
+    features: [
+      {
+        text: 'Python Programming for 
+Data Analytics',
+        strong: true
+      },
+      {
+        text: 'Python'
+      },
+      {
+        text: 'Numpy & Pandas'
+      },
+      {
+        text: 'Matplotlib & Seaborn'
+      },
+      {
+        text: 'Functional Exploratory Data Analysis'
+      }
+    ]
+  },
+    {
+    title: 'Application Operations',
+    logo: '../assets/images/logo-app.png',
+    logoClass: 'oval-box--app',
+    btnText:'Tüm Program',
+    btnIcon:'../assets/images/arrow-small-right.png',
+    features: [
+      {
+        text: 'Application Ders Programı',
+        strong: true
+      },
+      {
+        text: 'SQL Server Veritabanı Sorgulama'
+      },
+      {
+        text: 'SQL Server Veritabanı Yönetimi'
+      },
+      {
+        text: 'SQL Server Programlama'
+      },
+      {
+        text: 'LINUX Temelleri'
+      },
+      {
+        text: 'Ilk uygulama'
+      },
+      {
+        text: 'Scope kavramı'
+      },
+      {
+        text: 'Client Kurulumları'
+      },
+      {
+        text: 'LINUX Shell Komutları'
+      },
+      {
+        text: 'Yetkiler ve Kurulum Yönetimi'
+      }
+    ]
+  }
+] %}

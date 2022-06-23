@@ -11,6 +11,10 @@ function transferImages() {
   return src('src/images/*.{webp,jpeg,png}').pipe(dest('dist/assets/images'));
 }
 
+function transferFonts() {
+  return src('src/fonts/*.{eot,woff,woff2}').pipe(dest('dist/assets/fonts'));
+}
+
 function customPlumber(errorTitle) {
   return plumber({
     errorHandler: notify.onError({
@@ -62,13 +66,25 @@ function watchTask() {
     parallel(njkRender, browserSyncReload)
   );
   watch(
-    ['src/scss/**/*.scss', 'src/js/*.js', 'src/images/*.{webp,jpeg,png}'],
-    parallel(compileScss, minJs, transferImages, browserSyncReload)
+    [
+      'src/scss/**/*.scss',
+      'src/js/*.js',
+      'src/images/*.{webp,jpeg,png}',
+      'src/fonts/*.{eot,woff,woff2}',
+    ],
+    parallel(
+      compileScss,
+      minJs,
+      transferImages,
+      transferFonts,
+      browserSyncReload
+    )
   );
 }
 
 exports.default = parallel(
   transferImages,
+  transferFonts,
   compileScss,
   minJs,
   njkRender,

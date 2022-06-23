@@ -22,11 +22,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 40px;
 
       > figure {
         width: 60px;
       }
+
+      > figure:first-of-type {
+        margin-right: 40px;
+      }
     }
   }
+}
+
+.page-wrap {
+  background-color: transparent;
+}
+
+.page-wrap.modal-page .header,
+.page-wrap.modal-page .footer {
+  display: none;
 }
