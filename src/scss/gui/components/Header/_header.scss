@@ -5,7 +5,7 @@
 
   @include large {
     height: 64px;
-    background-color: $blue;
+    background-color: $blue-2;
   }
 
   .container {
@@ -14,18 +14,24 @@
     justify-content: space-between;
     align-items: center;
 
-    figure {
-      min-width: 186px;
+    > figure {
       max-width: 244px;
+      z-index: 12;
+
+      img {
+        display: block;
+      }
 
       @include phone {
         padding: 24px 0;
+        max-width: 186px;
       }
     }
 
     .burger-menu {
       width: 24px;
       cursor: pointer;
+      margin-right: 6px;
       display: none;
 
       @include large {
@@ -38,8 +44,8 @@
 
       &.active .burger-menu__close {
         display: block;
-        margin-right: 5px;
-        width: 32px;
+        // margin-right: 5px;
+        // width: 32px;
       }
 
       &.active .burger-menu__open {
@@ -57,7 +63,7 @@
         flex-direction: column;
         align-items: baseline;
         position: absolute;
-        padding: 0 10px;
+        padding: 0 16px;
         top: -464px;
         left: 0;
         transition: all 500ms cubic-bezier(0.21, 0.77, 0.82, 0.25);
@@ -71,12 +77,66 @@
         @include large {
           padding: 10px 0;
         }
+
+        > figure {
+          display: none;
+        }
+      }
+    }
+
+    #{ $self }__nav.visible {
+      top: 64px;
+      height: calc(100vh - 64px);
+      z-index: 10;
+      background: linear-gradient(
+        180deg,
+        rgba(39, 106, 234, 1) 1%,
+        rgba(26, 41, 127, 1) 100%
+      );
+
+      > a:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
 
-      &.visible {
-        top: 64px;
-        height: calc(100vh - 64px);
-        z-index: 10;
+      > a {
+        width: 100%;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 11px 0;
+        z-index: 12;
+
+        > figure {
+          display: block;
+          width: 24px;
+        }
+      }
+
+      > div {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 16px;
+        background-color: $blue-2;
+
+        > button {
+          width: 100%;
+        }
+      }
+    }
+
+    .halo {
+      position: absolute;
+      width: 80%;
+      top: -64px;
+      left: 0;
+      display: none;
+
+      &.active {
+        display: block;
       }
     }
   }

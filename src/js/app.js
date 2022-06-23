@@ -1,6 +1,8 @@
 const menuBtn = document.querySelector('.burger-menu');
 const headerNav = document.querySelector('.header__nav');
 const logo = document.querySelector('.logo');
+const body = document.querySelector('body');
+const menuHalo = document.querySelector('.halo');
 
 if (menuBtn) {
   menuBtn.addEventListener('click', toggleMenu);
@@ -10,18 +12,24 @@ function toggleMenu() {
   if (headerNav.classList.contains('visible')) {
     headerNav.classList.remove('visible');
     menuBtn.classList.remove('active');
+    body.classList.remove('overflowHidden');
+    menuHalo.classList.remove('active');
   } else {
     headerNav.classList.add('visible');
     menuBtn.classList.add('active');
+    body.classList.add('overflowHidden');
+    menuHalo.classList.add('active');
   }
 }
 
-let mobileNavMatch = window.matchMedia('(max-width: 1200px)');
+let mobileNavMaxMatch = window.matchMedia('(max-width: 1200px)');
+let mobileNavMinMatch = window.matchMedia('(min-width: 1201px)');
 
-mobileNavMatch.addEventListener('change', mobileMenuWidth);
+mobileNavMaxMatch.addEventListener('change', mobileMenuMaxWidth);
+mobileNavMinMatch.addEventListener('change', mobileMenuMinWidth);
 
-function mobileMenuWidth() {
-  if (mobileNavMatch.matches && mobileNavMatch) {
+function mobileMenuMaxWidth() {
+  if (mobileNavMaxMatch.matches && mobileNavMaxMatch) {
     logo.src = '../assets/images/logo-white.png';
   } else {
     logo.src = '../assets/images/logo@2x.png';
@@ -30,7 +38,16 @@ function mobileMenuWidth() {
   }
 }
 
-mobileMenuWidth(mobileNavMatch);
+function mobileMenuMinWidth() {
+  console.log('min');
+  if (mobileNavMinMatch.matches && mobileNavMinMatch) {
+    headerNav.classList.remove('visible');
+    menuBtn.classList.remove('active');
+  }
+}
+
+mobileMenuMaxWidth(mobileNavMaxMatch);
+mobileMenuMinWidth(mobileNavMinMatch);
 
 // ***********************
 
