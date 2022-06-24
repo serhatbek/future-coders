@@ -14,17 +14,20 @@
     justify-content: space-between;
     align-items: center;
 
-    a > figure {
-      max-width: 244px;
+    > a {
       z-index: 12;
 
-      img {
-        display: block;
-      }
+      > figure {
+        max-width: 244px;
 
-      @include phone {
-        padding: 24px 0;
-        max-width: 186px;
+        img {
+          display: block;
+        }
+
+        @include phone {
+          padding: 24px 0;
+          max-width: 186px;
+        }
       }
     }
 
