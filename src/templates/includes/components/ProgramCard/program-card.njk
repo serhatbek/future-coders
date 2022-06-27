@@ -11,7 +11,7 @@
     </div>
     <div class="program-card__body">
       <ul>
-        {% for list in subLoop %}
+        {% for list in cardSubLoop %}
           <li class="{%- if list.strong %} strong{%- endif -%}">{{ list.text }}</li>
         {% endfor %}
       </ul>
