@@ -112,15 +112,15 @@
     padding: 20px 0 20px 40px;
     display: flex;
     align-items: center;
-    color: $blue;
-    font-weight: 600;
-    font-size: 16px;
-    cursor: pointer;
     width: 100%;
     border: none;
     border-top: 2px solid $gray-3;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    color: $blue;
     background: transparent;
 
     @include phone {

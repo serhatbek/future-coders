@@ -68,3 +68,25 @@ function toggleAccordion(e) {
     target.classList.remove('active');
   }
 }
+
+// *******************************
+
+const openModalBtn = document.querySelector('.js-open-modal');
+const closeModalBtn = document.querySelector('.js-close-modal');
+const modal = document.querySelector('.modal-bg');
+
+if (openModalBtn) {
+  openModalBtn.addEventListener('click', openModal);
+}
+
+if (closeModalBtn) {
+  closeModalBtn.addEventListener('click', closeModal);
+}
+
+function openModal() {
+  modal.classList.add('active');
+}
+
+function closeModal() {
+  modal.classList.remove('active');
+}

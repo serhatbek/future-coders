@@ -50,14 +50,15 @@
 {% block content %}
   {{Button.item(
     text='Open Modal',
-    class='js-open-modal'
+    class='js-open-modal',
+    buttonv3=true
   )}}
 
   <div class="modal-bg">
     <div class="modal">
       <div class="modal__header">
         <span>IOS/ Swift Developer</span>
-        <figure>
+        <figure class="js-close-modal">
           <img src="../assets/images/modal-close.png">
         </figure>
       </div>
