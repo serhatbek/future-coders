@@ -1,0 +1,86 @@
+{% extends 'includes/layout/layout.njk' %}
+{% import 'includes/components/Button/button.njk' as Button %}
+
+{% set title = 'Android / Kotlin Developer' %}
+{% set page = 'modal' %}
+{% set androidList = [
+  {
+    part: 'Bölüm 1.',
+    topic: 'Android Giriş'
+  }, {
+    part: 'Bölüm 2.',
+    topic: 'Değişkenler ve Veri Tipleri'
+  }, {
+    part: 'Bölüm 3.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 4.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 5.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 6.',
+    topic: 'Nesne Tabanlı Programlama'
+  }
+] %}
+
+{% set kotlinList = [
+  {
+    part: 'Bölüm 1.',
+    topic: 'Kotlin Giriş'
+  }, {
+    part: 'Bölüm 2.',
+    topic: 'Değişkenler ve Veri Tipleri'
+  }, {
+    part: 'Bölüm 3.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 4.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 5.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 6.',
+    topic: 'Nesne Tabanlı Programlama'
+  }
+] %}
+
+{% block content %}
+  {{Button.item(
+    text='Open Modal',
+    class='js-open-modal',
+    buttonv3=true
+  )}}
+
+  <div class="modal-bg">
+    <div class="modal">
+      <div class="modal__header">
+        <span>Android / Kotlin Developer</span>
+        <figure class="js-close-modal">
+          <img src="../assets/images/modal-close.png">
+        </figure>
+      </div>
+      <div class="modal__body">
+        <div class="modal__body-content">
+          <span>Android Ders Programı</span>
+          <ul>
+            {% for item in androidList %}
+              <li>
+                <span>{{item.part}}</span>{{item.topic}}</li>
+            {% endfor %}
+          </ul>
+
+          <span>Kotlin Ders Programı</span>
+          <ul>
+            {% for item in kotlinList %}
+              <li>
+                <span>{{item.part}}</span>{{item.topic}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

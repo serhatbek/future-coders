@@ -83,10 +83,11 @@ if (closeModalBtn) {
   closeModalBtn.addEventListener('click', closeModal);
 }
 
-function openModal() {
+function openModal(e) {
+  let modal = e.target.nextElementSibling;
   modal.classList.add('active');
 }
 
-function closeModal() {
+function closeModal(e) {
   modal.classList.remove('active');
 }
