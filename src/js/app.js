@@ -71,42 +71,18 @@ function toggleAccordion(e) {
 
 // *******************************
 
-const openModalBtn = document.querySelector('.js-open-modal');
-const closeModalBtn = document.querySelector('.js-close-modal');
-const modal = document.querySelector('.modal-bg');
-
-if (openModalBtn) {
-  openModalBtn.addEventListener('click', openModal);
-}
-
-if (closeModalBtn) {
-  closeModalBtn.addEventListener('click', closeModal);
-}
-
-function openModal(e) {
-  let modal = e.target.nextElementSibling;
-  modal.classList.add('active');
-}
-
-function closeModal(e) {
-  modal.classList.remove('active');
-}
-
-// const openModalBtns = document.querySelectorAll('.js-open-modal');
-// const closeModalBtns = document.querySelectorAll('.js-close-modal');
+// const openModalBtn = document.querySelector('.js-open-modal');
+// const closeModalBtn = document.querySelector('.js-close-modal');
 // const modal = document.querySelector('.modal-bg');
 
-// if (openModalBtns) {
-//   openModalBtns.forEach((btn) => {
-//     btn.addEventListener('click', openModal);
-//   });
+// if (openModalBtn) {
+//   openModalBtn.addEventListener('click', openModal);
 // }
 
-// if (closeModalBtns) {
-//   closeModalBtns.forEach((btn) => {
-//     btn.addEventListener('click', closeModal);
-//   });
+// if (closeModalBtn) {
+//   closeModalBtn.addEventListener('click', closeModal);
 // }
+
 // function openModal(e) {
 //   let modal = e.target.nextElementSibling;
 //   modal.classList.add('active');
@@ -115,3 +91,32 @@ function closeModal(e) {
 // function closeModal(e) {
 //   modal.classList.remove('active');
 // }
+
+const openModalBtns = document.querySelectorAll('.js-open-modal');
+const closeModalBtns = document.querySelectorAll('.js-close-modal');
+const modals = document.querySelectorAll('.modal-bg');
+
+if (openModalBtns) {
+  openModalBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      let target = e.target.dataset.modalName;
+      modals.forEach((modal) => {
+        if (modal.classList.contains(target)) {
+          modal.classList.add('active');
+        }
+      });
+    });
+  });
+}
+
+if (closeModalBtns) {
+  closeModalBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      modals.forEach((modal) => {
+        if (modal.classList.contains('active')) {
+          modal.classList.remove('active');
+        }
+      });
+    });
+  });
+}

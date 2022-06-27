@@ -1,0 +1,50 @@
+{# {% extends 'includes/layout/layout.njk' %} #}
+{% import 'includes/components/Button/button.njk' as Button %}
+
+{% block content %}
+  <div class="container">
+    {{Button.item(
+    text='IOS / Swift Modal',
+    class='js-open-modal',
+    buttonv3=true,
+    attr='data-modal-name=modal-ios'
+  )}}
+
+    {{Button.item(
+    text='Android / Kotlin Modal',
+    class='js-open-modal',
+    buttonv3=true,
+    attr='data-modal-name=modal-kotlin'
+  )}}
+
+    {{Button.item(
+    text='Java Modal',
+    class='js-open-modal',
+    buttonv3=true,
+    attr='data-modal-name=modal-java'
+  )}}
+
+    {{Button.item(
+    text='. Net Modal',
+    class='js-open-modal',
+    buttonv3=true,
+    attr='data-modal-name=modal-net'
+  )}}
+
+    {{Button.item(
+    text='Data Modal',
+    class='js-open-modal',
+    buttonv3=true,
+    attr='data-modal-name=modal-data'
+  )}}
+
+    {{Button.item(
+    text='Application Modal',
+    class='js-open-modal',
+    buttonv3=true,
+    attr='data-modal-name=modal-app'
+  )}}
+  </div>
+{% endblock %}
+
+{% include 'pages/Modals/program-card-modals.njk' %}

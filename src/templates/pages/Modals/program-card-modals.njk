@@ -1,0 +1,413 @@
+{% extends 'includes/layout/layout.njk' %}
+{% import 'includes/components/Button/button.njk' as Button %}
+
+{% set page = 'modal' %}
+{% set iosList = [
+  {
+    part: 'Bölüm 1.',
+    topic: 'Swift Giriş'
+  }, {
+    part: 'Bölüm 2.',
+    topic: 'Değişkenler ve Veri Tipleri'
+  }, {
+    part: 'Bölüm 3.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 4.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 5.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 6.',
+    topic: 'Nesne Tabanlı Programlama'
+  }
+] %}
+
+{% set swiftList = [
+  {
+    part: 'Bölüm 1.',
+    topic: 'Swift Giriş'
+  }, {
+    part: 'Bölüm 2.',
+    topic: 'Değişkenler ve Veri Tipleri'
+  }, {
+    part: 'Bölüm 3.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 4.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 5.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 6.',
+    topic: 'Nesne Tabanlı Programlama'
+  }
+] %}
+
+{% set androidList = [
+  {
+    part: 'Bölüm 1.',
+    topic: 'Android Giriş'
+  }, {
+    part: 'Bölüm 2.',
+    topic: 'Değişkenler ve Veri Tipleri'
+  }, {
+    part: 'Bölüm 3.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 4.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 5.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 6.',
+    topic: 'Nesne Tabanlı Programlama'
+  }
+] %}
+
+{% set kotlinList = [
+  {
+    part: 'Bölüm 1.',
+    topic: 'Kotlin Giriş'
+  }, {
+    part: 'Bölüm 2.',
+    topic: 'Değişkenler ve Veri Tipleri'
+  }, {
+    part: 'Bölüm 3.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 4.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 5.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 6.',
+    topic: 'Nesne Tabanlı Programlama'
+  }
+] %}
+
+{% set javaList = [
+  {
+    part: 'Bölüm 1.',
+    topic: 'Java Giriş'
+  }, {
+    part: 'Bölüm 2.',
+    topic: 'Değişkenler ve Veri Tipleri'
+  }, {
+    part: 'Bölüm 3.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 4.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 5.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 6.',
+    topic: 'Nesne Tabanlı Programlama'
+  }, {
+    part: 'Bölüm 7.',
+    topic: '. Net Giriş'
+  }, {
+    part: 'Bölüm 8.',
+    topic: 'Değişkenler ve Veri Tipleri'
+  }, {
+    part: 'Bölüm 9.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 10.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 11.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 12.',
+    topic: 'Nesne Tabanlı Programlama'
+  }
+] %}
+
+{% set netList = [
+  {
+    part: 'Bölüm 1.',
+    topic: '. Net Giriş'
+  }, {
+    part: 'Bölüm 2.',
+    topic: 'Değişkenler ve Veri Tipleri'
+  }, {
+    part: 'Bölüm 3.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 4.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 5.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 6.',
+    topic: 'Nesne Tabanlı Programlama'
+  }, {
+    part: 'Bölüm 7.',
+    topic: '. Net Giriş'
+  }, {
+    part: 'Bölüm 8.',
+    topic: 'Değişkenler ve Veri Tipleri'
+  }, {
+    part: 'Bölüm 9.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 10.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 11.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 12.',
+    topic: 'Nesne Tabanlı Programlama'
+  }
+] %}
+
+{% set dataList = [
+  {
+    part: 'Bölüm 1.',
+    topic: 'Data Giriş'
+  }, {
+    part: 'Bölüm 2.',
+    topic: 'Değişkenler ve Veri Tipleri'
+  }, {
+    part: 'Bölüm 3.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 4.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 5.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 6.',
+    topic: 'Nesne Tabanlı Programlama'
+  }, {
+    part: 'Bölüm 7.',
+    topic: '. Net Giriş'
+  }, {
+    part: 'Bölüm 8.',
+    topic: 'Değişkenler ve Veri Tipleri'
+  }, {
+    part: 'Bölüm 9.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 10.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 11.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 12.',
+    topic: 'Nesne Tabanlı Programlama'
+  }, {
+    part: 'Bölüm 13.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 14.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 15.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 16.',
+    topic: 'Nesne Tabanlı Programlama'
+  }
+] %}
+
+{% set appList = [
+  {
+    part: 'Bölüm 1.',
+    topic: 'Application Operations Giriş'
+  }, {
+    part: 'Bölüm 2.',
+    topic: 'Değişkenler ve Veri Tipleri'
+  }, {
+    part: 'Bölüm 3.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 4.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 5.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 6.',
+    topic: 'Nesne Tabanlı Programlama'
+  }, {
+    part: 'Bölüm 7.',
+    topic: '. Net Giriş'
+  }, {
+    part: 'Bölüm 8.',
+    topic: 'Değişkenler ve Veri Tipleri'
+  }, {
+    part: 'Bölüm 9.',
+    topic: 'Standart Programlama Yapılar'
+  }, {
+    part: 'Bölüm 10.',
+    topic: 'OpXnal'
+  }, {
+    part: 'Bölüm 11.',
+    topic: 'CollecXons'
+  }, {
+    part: 'Bölüm 12.',
+    topic: 'Nesne Tabanlı Programlama'
+  }
+] %}
+
+{% block content %}
+  <div class="modal-bg modal-ios">
+    <div class="modal">
+      <div class="modal__header">
+        <span>IOS/ Swift Developer</span>
+        <figure class="js-close-modal">
+          <img src="../assets/images/modal-close.png">
+        </figure>
+      </div>
+      <div class="modal__body">
+        <div class="modal__body-content">
+          <span>IOS Ders Programı</span>
+          <ul>
+            {% for item in iosList %}
+              <li>
+                <span>{{item.part}}</span>{{item.topic}}</li>
+            {% endfor %}
+          </ul>
+
+          <span>Swift Ders Programı</span>
+          <ul>
+            {% for item in swiftList %}
+              <li>
+                <span>{{item.part}}</span>{{item.topic}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-bg modal-kotlin">
+    <div class="modal">
+      <div class="modal__header">
+        <span>Android / Kotlin Developer</span>
+        <figure class="js-close-modal">
+          <img src="../assets/images/modal-close.png">
+        </figure>
+      </div>
+      <div class="modal__body">
+        <div class="modal__body-content">
+          <span>Android Ders Programı</span>
+          <ul>
+            {% for item in androidList %}
+              <li>
+                <span>{{item.part}}</span>{{item.topic}}</li>
+            {% endfor %}
+          </ul>
+
+          <span>Kotlin Ders Programı</span>
+          <ul>
+            {% for item in kotlinList %}
+              <li>
+                <span>{{item.part}}</span>{{item.topic}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-bg modal-java">
+    <div class="modal">
+      <div class="modal__header">
+        <span>Java Developer</span>
+        <figure class="js-close-modal">
+          <img src="../assets/images/modal-close.png">
+        </figure>
+      </div>
+      <div class="modal__body">
+        <div class="modal__body-content">
+          <span>Java Ders Programı</span>
+          <ul>
+            {% for item in javaList %}
+              <li>
+                <span>{{item.part}}</span>{{item.topic}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-bg modal-net">
+    <div class="modal">
+      <div class="modal__header">
+        <span>. Net Developer</span>
+        <figure class="js-close-modal">
+          <img src="../assets/images/modal-close.png">
+        </figure>
+      </div>
+      <div class="modal__body">
+        <div class="modal__body-content">
+          <span>. Net Ders Programı</span>
+          <ul>
+            {% for item in netList %}
+              <li>
+                <span>{{item.part}}</span>{{item.topic}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-bg modal-data">
+    <div class="modal">
+      <div class="modal__header">
+        <span>Data Scientist</span>
+        <figure class="js-close-modal">
+          <img src="../assets/images/modal-close.png">
+        </figure>
+      </div>
+      <div class="modal__body">
+        <div class="modal__body-content">
+          <span>Data Scientist Programı</span>
+          <ul>
+            {% for item in dataList %}
+              <li>
+                <span>{{item.part}}</span>{{item.topic}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-bg modal-app">
+    <div class="modal">
+      <div class="modal__header">
+        <span>Application Operations</span>
+        <figure class="js-close-modal">
+          <img src="../assets/images/modal-close.png">
+        </figure>
+      </div>
+      <div class="modal__body">
+        <div class="modal__body-content">
+          <span>Application Ders Programı</span>
+          <ul>
+            {% for item in appList %}
+              <li>
+                <span>{{item.part}}</span>{{item.topic}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
