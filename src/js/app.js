@@ -39,10 +39,10 @@ function mobileMenuMaxWidth() {
 }
 
 function mobileMenuMinWidth() {
-  console.log('min');
   if (mobileNavMinMatch.matches && mobileNavMinMatch) {
     headerNav.classList.remove('visible');
     menuBtn.classList.remove('active');
+    menuHalo.classList.remove('active');
   }
 }
 
