@@ -1,6 +1,29 @@
 {% import 'includes/components/OvalLogo/oval-logo.njk' as OvalLogo %}
 
-{% macro item() %}
+{% macro item(cardLogo, cardLogoClass, cardTitle, cardText, cardSubLoop, cardBtnText, cardBtnIcon) %}
+  <div class="program-card">
+    <div class="program-card__head">
+      <span class="{%- if item.narrow %}narrow{%- endif -%}">{{ cardTitle }}</span>
+      {{OvalLogo.item(
+        imgUrl=cardLogo,
+        class=cardLogoClass
+      )}}
+    </div>
+    <div class="program-card__body">
+      <ul>
+        {% for list in subLoop %}
+          <li class="{%- if list.strong %} strong{%- endif -%}">{{ list.text }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <button class="program-card__btn">
+      <span>{{ cardBtnText }}</span>
+      <figure><img src="{{ cardBtnIcon }}"></figure>
+    </button>
+  </div>
+{% endmacro %}
+
+{# {% macro item() %}
   {% for item in programCardItems %}
     <div class="program-card">
       <div class="program-card__head">
@@ -23,9 +46,9 @@
       </button>
     </div>
   {% endfor %}
-{% endmacro %}
+{% endmacro %} #}
 
-{% set programCardItems = [
+{# {% set programCardItems = [
   {
     title: 'IOS/ Swift Developer',
     logo: '../assets/images/logo-ios.png',
@@ -165,7 +188,7 @@
     features: [
       {
         text: 'Python Programming for 
-Data Analytics',
+              Data Analytics',
         strong: true
       },
       {
@@ -222,4 +245,4 @@ Data Analytics',
       }
     ]
   }
-] %}
+] %} #}
