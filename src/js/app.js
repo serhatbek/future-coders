@@ -91,3 +91,27 @@ function openModal(e) {
 function closeModal(e) {
   modal.classList.remove('active');
 }
+
+// const openModalBtns = document.querySelectorAll('.js-open-modal');
+// const closeModalBtns = document.querySelectorAll('.js-close-modal');
+// const modal = document.querySelector('.modal-bg');
+
+// if (openModalBtns) {
+//   openModalBtns.forEach((btn) => {
+//     btn.addEventListener('click', openModal);
+//   });
+// }
+
+// if (closeModalBtns) {
+//   closeModalBtns.forEach((btn) => {
+//     btn.addEventListener('click', closeModal);
+//   });
+// }
+// function openModal(e) {
+//   let modal = e.target.nextElementSibling;
+//   modal.classList.add('active');
+// }
+
+// function closeModal(e) {
+//   modal.classList.remove('active');
+// }
