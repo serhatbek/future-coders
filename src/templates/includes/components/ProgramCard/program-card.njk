@@ -1,9 +1,9 @@
 {% import 'includes/components/OvalLogo/oval-logo.njk' as OvalLogo %}
 
-{% macro item(cardLogo, cardLogoClass, cardTitle, cardText, cardSubLoop, cardBtnText, cardBtnIcon) %}
+{% macro item(cardLogo, cardLogoClass, firstLoop, cardTitle, cardText, cardSubLoop, cardBtnText, cardBtnIcon) %}
   <div class="program-card">
     <div class="program-card__head">
-      <span class="{%- if item.narrow %}narrow{%- endif -%}">{{ cardTitle }}</span>
+      <span class="{%- if firstLoop.narrow -%} narrow{%- endif -%}">{{ cardTitle }}</span>
       {{OvalLogo.item(
         imgUrl=cardLogo,
         class=cardLogoClass
@@ -12,7 +12,7 @@
     <div class="program-card__body">
       <ul>
         {% for list in cardSubLoop %}
-          <li class="{%- if list.strong %} strong{%- endif -%}">{{ list.text }}</li>
+          <li class="{%- if list.strong -%} strong{%- endif -%}">{{ list.text }}</li>
         {% endfor %}
       </ul>
     </div>

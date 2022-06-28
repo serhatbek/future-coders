@@ -3,7 +3,7 @@
 {% import 'includes/components/Calendar/calendar.njk' as Calendar %}
 {% import 'includes/components/ProgramCard/program-card.njk' as ProgramCard with context %}
 
-{% set title = 'Home' %}
+{% set title = 'Geleceği Yazanlar' %}
 
 {% set programCardItems = [
   {
@@ -254,6 +254,7 @@
       {% for item in programCardItems %}
         {{ProgramCard.item(
         cardLogo= item.logo,
+        firstLoop=item,
         cardLogoClass= item.logoClass,
         cardTitle= item.title,
         cardSubLoop=item.features,
