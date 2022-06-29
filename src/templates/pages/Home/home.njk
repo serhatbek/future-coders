@@ -254,9 +254,11 @@
 
       {% for item in programCardItems %}
         {% call ProgramCard.item(cardLogo = item.logo, firstLoop = item, cardLogoClass = item.logoClass, cardTitle = item.title, cardBtnText = item.btnText, cardBtnIcon = item.btnIcon) %}
-        {% for list in item.features %}
-          <li class="{%- if list.strong -%} strong{%- endif -%}">{{ list.text }}</li>
-        {% endfor %}
+        <ul>
+          {% for list in item.features %}
+            <li class="{%- if list.strong -%} strong{%- endif -%}">{{ list.text }}</li>
+          {% endfor %}
+        </ul>
         {% endcall %}
       {% endfor %}
 
