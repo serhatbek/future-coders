@@ -251,7 +251,16 @@
     <p class="section__desc">Programda aşağıdaki eğitim başlıklarında eğitim, gelişim ve istihdam fırsatları bulunuyor.</p>
 
     <div class="container">
+
       {% for item in programCardItems %}
+        {% call ProgramCard.item(cardLogo = item.logo, firstLoop = item, cardLogoClass = item.logoClass, cardTitle = item.title, cardBtnText = item.btnText, cardBtnIcon = item.btnIcon) %}
+        {% for list in item.features %}
+          <li class="{%- if list.strong -%} strong{%- endif -%}">{{ list.text }}</li>
+        {% endfor %}
+        {% endcall %}
+      {% endfor %}
+
+      {# {% for item in programCardItems %}
         {{ProgramCard.item(
         cardLogo= item.logo,
         firstLoop=item,
@@ -261,7 +270,7 @@
         cardBtnText= item.btnText,
         cardBtnIcon= item.btnIcon
       )}}
-      {% endfor %}
+      {% endfor %} #}
     </div>
   </section>
 
