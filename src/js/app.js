@@ -1,5 +1,6 @@
 const menuBtn = document.querySelector('.burger-menu');
 const headerNav = document.querySelector('.header__nav');
+const headerNavLinks = document.querySelectorAll('.header__nav a');
 const logo = document.querySelector('.logo');
 const body = document.querySelector('body');
 const menuHalo = document.querySelector('.halo');
@@ -8,12 +9,26 @@ if (menuBtn) {
   menuBtn.addEventListener('click', toggleMenu);
 }
 
+function closeMobileNav() {
+  headerNav.classList.remove('visible');
+  menuBtn.classList.remove('active');
+  body.classList.remove('overflowHidden');
+  menuHalo.classList.remove('active');
+}
+
+if (headerNavLinks) {
+  headerNavLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      if (body.classList.contains('overflowHidden')) {
+        closeMobileNav();
+      }
+    });
+  });
+}
+
 function toggleMenu() {
   if (headerNav.classList.contains('visible')) {
-    headerNav.classList.remove('visible');
-    menuBtn.classList.remove('active');
-    body.classList.remove('overflowHidden');
-    menuHalo.classList.remove('active');
+    closeMobileNav();
   } else {
     headerNav.classList.add('visible');
     menuBtn.classList.add('active');
